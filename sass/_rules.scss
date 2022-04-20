@@ -1,0 +1,86 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+*, *::after , *::before {
+    box-sizing : border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    font-size : 14px;
+    min-height : 100vh; 
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    height: 100%;
+    width: 100%;
+    background-color: $main-bg;
+    color : white ; 
+}
+
+a{
+    text-decoration : none;
+    color : white ; 
+}
+ul{
+    list-style : none;
+}
+
+// container
+.container{
+    max-width: 1156px;
+    margin: 0 auto;
+    @include mobile-down(){
+        max-width : 90%;
+    }
+}
+
+// useful calasses
+.d-flex{
+    display: flex;
+    &.jc-c{
+        justify-content: center;
+    }
+    &.jc-sb{
+        justify-content: space-between;
+    }
+    &.ai-c{
+        align-items: center;
+    }
+    &.f-wrap {
+        flex-wrap : wrap;
+    }
+    .flex-col{
+        flex-direction: column;
+    }
+}
+.align-center{
+    text-align : center;
+}
+.second-font{
+    font-family: 'Raleway', sans-serif;
+}
+.f-lighter{
+    font-weight : lighter ;
+}
+.f-bold{
+    font-weight : bold ;
+}
+
+.btn {
+    border : none;
+    outline : none;
+    color: white ; 
+    background-color: $blue;
+    border-radius : 25px;
+    padding : 1em 5em ;
+    font-size :  1.1rem;
+    display: inline-block;
+    transition : .2s;
+    &:hover{
+        background-color : $cyan;
+    }
+}

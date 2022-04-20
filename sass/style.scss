@@ -1,0 +1,387 @@
+// global variables
+@use 'variables' as * ;
+
+// default rules
+@use 'rules';
+
+// mixins
+@use 'mixins' as *;
+
+// header
+header {
+    background-color: $intro-signup-bg;
+    .header{
+        padding : 5.214em 0;
+        @include mobile-down{
+            padding : 2em 0;
+        }
+    }
+    .nav-items li{
+        display: inline-block;
+        margin-right : 2em;
+        .nav-link:hover{
+            border-bottom : 2px solid white 
+        }
+    }
+    .logo{
+        width: 12.642rem;
+        @include mobile-down{
+            width: 6rem;
+        }
+        img{
+            width: 100%;
+        }
+    }
+    .hero{
+        background-image: url('../images/bg-curvy-desktop.svg');
+        background-repeat: no-repeat;
+        background-size : contain;
+        background-position: center bottom ; 
+        padding-bottom : 3em;
+        position: relative;
+        z-index: 1;
+        @include mobile-down{
+            &::before{
+                content : "";
+                position: absolute;
+                width: 100%;
+                top: 0;
+                left : 0;
+                right:0;
+                bottom : 40%;
+                background-image: url('../images/bg-curvy-mobile.svg');
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center bottom;
+                z-index: -2;
+            }
+            &::after{
+                content : "";
+                position: absolute;
+                width: 100%;
+                top: 60%;
+                left : 0;
+                right:0;
+                bottom : 0;
+                background-color: $main-bg;
+                z-index: -2;
+            }
+            background: none;
+
+        }
+        .hero-img{
+            margin-bottom : 3em; 
+            max-width : 35rem;
+            margin : 0 auto;
+            @include mobile-down{
+                max-width : 80%;
+                margin-bottom : 1em;
+            }
+            img{
+                width: 100%;
+            }
+        }
+        .hero-content{
+            .heading{
+                 
+                max-width : 35rem;
+                margin : 0 auto;
+                margin-bottom : 2em;
+                @include mobile-down{
+                    max-width : 26rem;
+                    margin-bottom : 1em;
+                }
+            }
+            .text{
+                font-size : 1.2rem;
+                line-height: 1.75;
+                max-width : 35rem;
+                margin : 0 auto;
+                margin-bottom : 2em;
+                @include mobile-down{
+                    max-width : 26rem;
+                    margin-bottom : 1em;
+                }
+            }
+        }
+    }
+}
+
+main {
+    padding-top : 6.07em;
+    padding-bottom : 15em;
+
+    position : relative;
+    .features{
+        display: grid;
+        grid-template-columns : repeat(2 , 1fr);
+        row-gap : 4em;
+        @include mobile-down{
+            grid-template-columns : 1fr;
+        }
+        .feature{
+            .content{
+                .heading{
+                    padding-top : 1em;
+                    padding-bottom: 0.6em;
+                }
+                .text{
+                    max-width : 27rem;
+                    margin : 0 auto;
+                    font-size : .9rem;
+                    line-height: 1.6;
+                }
+            }
+        }
+    }
+    .stay-productive{
+        padding : 6em 0 3em 0;
+        @include mobile-down{
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .img{
+            width: 50%;
+            @include mobile-down{
+                width: 90%;
+            }
+            img{
+                width: 100%;
+            }
+        }
+        .content{
+            width: 50%;
+            padding-left : 4em;
+            @include mobile-down{
+                width: 100%;
+                padding: 0;
+            }
+            .heading{
+                max-width : 20rem;
+                line-height: 1.5;
+                margin-bottom : .5em;
+            }
+            .text{
+                line-height: 1.5;
+                margin-bottom : 1em;
+            }
+            .link{
+                color : $cyan;
+                border-bottom : 1px solid $cyan;
+                transition: .2s;
+                &:hover{
+                    color : white;
+                    border-color : white;
+                }
+            }
+        }
+    }
+
+    .testimonials{
+        background-image: url('../images/bg-quotes.png');
+        background-repeat : no-repeat;
+        background-position : left 3.5em;
+        padding: 6em .5em;
+        gap : 2em;
+        @include mobile-down{
+            flex-direction: column;
+            padding: 6em 1em;
+            background-size: 2rem;
+            background-position : 1em 4.5em;
+        }
+        .item{
+            background-color: $testimonials-bg;
+            border-radius : 10px;
+            padding : 2em;
+            .text{
+                font-size : 1rem;
+                margin-bottom : 1.5em;
+            }
+            .person-info{
+                gap : 1em;
+                .avatar{
+                    border-radius : 50%;
+                    overflow: hidden;
+                    width: 12%;
+                    img{
+                        width: 100%;
+                    }
+                }
+                .info .role{
+                    font-size : .7rem;
+                }
+                .info .name{
+                    
+                }
+            }
+        }
+    }
+
+    .get-early-access{
+        background-color: $intro-signup-bg;
+        margin : 0 auto ; 
+        border-radius : 10px;
+        max-width : 60rem;
+        padding : 3em;
+        box-shadow: #130f0f 0px 0px 8px 1px;
+        position: absolute;
+        bottom : 0;
+        left : 50%;
+        transform : translate(-50%,50%);
+        @include mobile-down{
+            padding : 2em 2em;
+            width: 90%;
+        }
+        .heading{
+            font-weight : bold;
+            font-size : 1.75rem;
+            @include mobile-down{
+                font-size : 1.3rem;
+
+            }
+        }
+        .text{
+            font-size : .9rem;
+            margin : 0 auto ; 
+            max-width : 40rem;
+            padding : 1.5rem 0;
+            @include mobile-down{
+                font-size : .75rem;
+                line-height: 1.75;
+                max-width : 100%;
+            }
+        }
+        form{
+            max-width : 50rem;
+            display: flex;
+            gap : 2rem;
+            margin : 0 auto ;
+            @include mobile-down{
+                flex-direction : column;
+                align-items: stretch;
+            }
+            input[type=text]{
+                display: inline-block;
+                flex-grow: 1;
+                outline : none; 
+                border : none; 
+                border-radius : 25px;
+                padding : 1em 3em;
+            }
+    
+            input[type=submit]{
+                padding: 1em 2em !important;
+            }
+        }
+
+        
+    }
+}
+
+footer{
+    background-color: $footer-bg;
+    .footer-container{
+        max-width : 1240px;
+        margin : 0 auto; 
+        padding : 12rem 0 3rem 0;
+        @include mobile-down{
+            padding-top : 15rem;
+            width: 90%;
+        }
+        .footer-cols{
+            @include mobile-down{
+                flex-direction: column;
+                gap :1rem;
+            }
+        }
+        .logo{
+            width: 176px;
+            margin-bottom : 2em;
+            img{
+                width : 100%;
+            }
+        }
+
+        .info{
+            flex-basis : 22rem;
+            @include mobile-down{
+                flex-basis: auto;
+            }
+            
+            .text{
+                gap : 2rem;
+                p{
+                    flex-grow : 1;
+                    font-size : .9rem;
+                    line-height : 1.5;
+                }
+            }
+        }
+    }
+
+    .contacts{
+        
+        .contact-items .contact-item{
+            gap : 1.5em;
+            margin-bottom : 1em;
+            .contact-icon{
+                font-size : 1.2rem;
+            }
+        }
+    }
+
+    .footer-nav{
+        gap : 3rem;
+        flex-basis : 15rem;
+        @include mobile-down{
+            flex-direction: column;
+            padding: 5em 0;
+        }
+        .nav-items 
+        {
+            flex-basis: 50%;
+            .nav-item{
+                margin-bottom : 1.5em;
+                .nav-link:hover{
+                    font-weight :bold;
+                }
+            }
+        }
+        
+    }
+
+    .sm-links{
+        gap : 2rem;
+        align-items: flex-start;
+        @include mobile-down{
+            justify-content: center;
+        }
+        a{
+            font-size : 1.5rem;
+            position : relative;
+            display :flex;
+            align-items: center;
+            padding : 15px;
+            cursor: pointer;
+            width: 3rem;
+            height: 3rem;
+            justify-content: center;
+            &:before{
+                content : '';
+                position : absolute;
+                top : 0;
+                left : 0;
+                height: 100%;
+                width: 100%;
+                border : 1px solid white;
+                border-radius : 50%;
+            }
+            &:hover{
+                color : $cyan;
+            }
+            &:hover::before{
+                border-color : $cyan;
+            }
+        }
+    }
+}
