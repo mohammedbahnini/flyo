@@ -130,10 +130,6 @@ header .logo img {
   width: 100%;
 }
 header .hero {
-  background-image: url("../images/bg-curvy-desktop.svg");
-  background-repeat: no-repeat;
-  background-size: 100% 45%;
-  background-position: center bottom;
   padding-bottom: 15em;
   position: relative;
   z-index: 1;
@@ -149,7 +145,7 @@ header .hero {
     top: 0;
     left: 0;
     right: 0;
-    bottom: 40%;
+    bottom: 65%;
     background-image: url("../images/bg-curvy-mobile.svg");
     background-repeat: no-repeat;
     background-size: contain;
@@ -160,7 +156,7 @@ header .hero {
     content: "";
     position: absolute;
     width: 100%;
-    top: 60%;
+    top: 35%;
     left: 0;
     right: 0;
     bottom: 0;
