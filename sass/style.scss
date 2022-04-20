@@ -35,7 +35,7 @@ header {
     .hero{
         background-image: url('../images/bg-curvy-desktop.svg');
         background-repeat: no-repeat;
-        background-size : 100% 50%;
+        background-size : 100% 45%;
         background-position: center bottom ; 
         padding-bottom : 15em;
         position: relative;
@@ -70,9 +70,9 @@ header {
 
         }
         .hero-img{
-            margin-bottom : 3em; 
-            max-width : 35rem;
+            max-width : 35%;
             margin : 0 auto;
+            margin-bottom : 4rem; 
             @include mobile-down{
                 max-width : 80%;
                 margin-bottom : 1em;
@@ -83,8 +83,8 @@ header {
         }
         .hero-content{
             .heading{
-                 
-                max-width : 35rem;
+                font-size : 3rem;
+                max-width : 55rem;
                 margin : 0 auto;
                 margin-bottom : 2em;
                 @include mobile-down{
@@ -93,9 +93,9 @@ header {
                 }
             }
             .text{
-                font-size : 1.2rem;
+                font-size : 1.5rem;
                 line-height: 1.75;
-                max-width : 35rem;
+                max-width : 45rem;
                 margin : 0 auto;
                 margin-bottom : 2em;
                 @include mobile-down{
@@ -280,7 +280,7 @@ main {
 footer{
     background-color: $footer-bg;
     .footer-container{
-        max-width : 1240px;
+        max-width : 1300px;
         margin : 0 auto; 
         padding : 12rem 0 3rem 0;
         @include mobile-down{

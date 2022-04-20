@@ -31,7 +31,7 @@ ul{
 
 // container
 .container{
-    max-width: 1156px;
+    max-width: 1200px;
     margin: 0 auto;
     @include mobile-down(){
         max-width : 90%;
